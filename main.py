@@ -6,7 +6,7 @@ import requests
 import json
 
 
-###искусвеный интилек
+###ГЁГ±ГЄГіГ±ГўГҐГ­Г»Г© ГЁГ­ГІГЁГ«ГҐГЄ
 API_KEY = 'e18673a2a0374788b0c52b8d8af47588'
 ENDPOINT = 'https://westcentralus.api.cognitive.microsoft.com/vision/v2.0/ocr'
 DIR = 'imgs'
@@ -49,7 +49,7 @@ def get_text(pathToImage):
     response = requests.post(ENDPOINT, headers=headers, params=params, data=payload)
     results = json.loads(response.content)
     return results
-###искусвеный интилек
+###ГЁГ±ГЄГіГ±ГўГҐГ­Г»Г© ГЁГ­ГІГЁГ«ГҐГЄ
 
 
 
@@ -62,16 +62,16 @@ def new_map(lon, lat, napr):
 
     response = requests.get(map_request)
     if not response:
-        print("Ошибка выполнения запроса")
+        print("ГЋГёГЁГЎГЄГ  ГўГ»ГЇГ®Г«Г­ГҐГ­ГЁГї Г§Г ГЇГ°Г®Г±Г ")
         print(map_request)
-        print("Http статус:"), response.status_code, "(", response.reason, ")"
+        print("Http Г±ГІГ ГІГіГ±:"), response.status_code, "(", response.reason, ")"
         sys.exit(1)
     map_file = "map.png"
     try:
         with open(map_file, "wb") as file:
             file.write(response.content)
     except IOError as ex:
-        print("Ошибка записи временного файла")
+        print("ГЋГёГЁГЎГЄГ  Г§Г ГЇГЁГ±ГЁ ГўГ°ГҐГ¬ГҐГ­Г­Г®ГЈГ® ГґГ Г©Г«Г ")
         sys.exit(2)
     return map_file
 
@@ -313,15 +313,16 @@ while gamer == False:
         
         pygame.font.init()
         myfont = pygame.font.SysFont('Comic Sans MS', 30)
-        textsurface = myfont.render("МУЗЕЙ ИЗОБРАЗИТЕПЬНЬЖ", False, (0, 0, 0))
+        textsurface = myfont.render("ГЊГ“Г‡Г…Г‰ Г€Г‡ГЋГЃГђГЂГ‡Г€Г’Г…ГЏГњГЌГњГ†", False, (0, 0, 0))
         screen.blit(textsurface,(0,0))   
         
         myfont1 = pygame.font.SysFont('Comic Sans MS', 30)
-        textsurface1 = myfont1.render("КОЛЛЕКТИВНАЯ ВЫСТАВКА", False, (0, 0, 0))
+        textsurface1 = myfont1.render("ГЉГЋГ‹Г‹Г…ГЉГ’Г€Г‚ГЌГЂГџ Г‚Г›Г‘Г’ГЂГ‚ГЉГЂ", False, (0, 0, 0))
         screen.blit(textsurface1,(0,70)) 
         
         myfont2 = pygame.font.SysFont('Comic Sans MS', 30)
-        textsurface2 = myfont2.render("22 АВГУСТА - 27 СЕНТЯБРЯ", False, (0, 0, 0))        
+        textsurface2 = myfont2.render("22 ГЂГ‚ГѓГ“Г‘Г’ГЂ - 27 Г‘Г…ГЌГ’ГџГЃГђГџ", False, (0, 0, 0))
+        
         screen.blit(textsurface2,(0,140)) 
            
         if enter == 1:
