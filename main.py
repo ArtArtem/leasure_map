@@ -22,8 +22,6 @@ def handler():
             pathToImage = '{0}/{1}'.format(DIR, filename)
             results = get_text(pathToImage)
             text += parse_text(results)
-
-
     return text
 
 def parse_text(results):
